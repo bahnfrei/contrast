@@ -3,21 +3,30 @@ author: "Blog Author"
 description: "Really cool blog about ... something"
 permalink: /:title/
 lang: "en"
+logo: "/logo.png"
 
 dark_header: true            # keep the header dark
 dark_footer: false           # keep the footer dark
 show_footer: false           # show the "previous" and "next" links at the end of each post
 hide_title: false            # don't show the site title in the header
-# style: minimal             # use a simpler style inspired by the minima theme
+style: custom                # use a custom style
+
+permalink: pretty            # see https://jekyllrb.com/docs/permalinks/
+date_format: "%B %-d, %Y"    # see http://shopify.github.io/liquid/filters/date/
+paginate: 5                  # number of articles per page
+show_excerpts: true          # preview articles on the home page
 
 navigation:                  # site navigation in the header
+  - index.html
+  - categories.html
+  - archive.html
   - README.md
-  - Github: "http://github.com/niklasbuschmann/contrast"
 
-#icons:                      # icons in the header, see http://fontawesome.com/icons
-#  envelope: "mailto:niklasbuschmann@users.noreply.github.com"
-#  github: "https://github.com/niklasbuschmann/contrast"
-#  rss: "/contrast/feed.xml"
+icons:                       # (optional) icons in the header, see http://fontawesome.com/icons
+  search:   "/pages/search"
+  envelope: "mailto:bahnfrei@users.noreply.github.com"
+  github:   "https://github.com/bahnfrei/contrast"
+  rss:      "/feed.xml"
 
 comments:                    # embed disqus or isso comments
 #  disqus: ""
@@ -26,3 +35,6 @@ comments:                    # embed disqus or isso comments
 plugins:
  - jekyll-feed
  - jekyll-default-layout
+ - jekyll-paginate
+
+include: ['pages']

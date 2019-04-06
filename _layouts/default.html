@@ -18,9 +18,11 @@
 {% endif %}
 {% if site.comments.disqus %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso %}<script data-isso="http://{{ site.comments.isso }}" src="//{{ site.comments.isso }}/js/embed.min.js"></script>{% endif %}
+<link rel="stylesheet" href="{{ "/assets/lightbox/css/lightbox.css" | relative_url }}">
+<script defer src="{{ "/assets/lightbox/js/lightbox-plus-jquery.min.js" | relative_url }}"></script>
 
-<header {% if site.navigation and site.icons %}class="full"{% endif %}>
-  {% unless site.hide_title %}<h2><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h2>{% endunless %}
+<header>
+  {% unless site.hide_title %}<div class="brand"><img src="{{ site.logo | prepend: site.baseurl | replace: '//', '/' }}" alt="{{ site.title | escape }} Logo"><h1>{{ site.title | escape }}</h1></div>{% endunless %}
   {% if site.navigation %}
     <nav>
     {% for path in site.navigation %}
