@@ -1,0 +1,16 @@
+---
+title: "Categories"
+layout: default
+---
+{%- for category in site.categories -%}
+  {%- capture category_name -%}{{ category | first }}{%- endcapture %}
+  <article class="archive">
+    <a name="{{ category_name | slugize }}"></a><header><h1>{{ category_name }}</h1></header>
+  {%- for post in site.categories[category_name] %}
+    <div>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y, %B %-d" }}</time>
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+    </div>
+  {%- endfor %}
+  </article>
+{%- endfor %}

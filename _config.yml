@@ -36,3 +36,4 @@ comments:
 
 plugins:
  - jekyll-feed
+include: ['pages']

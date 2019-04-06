@@ -10,6 +10,8 @@ Just fork the repo and adjust the `_config.yml` to use with [Github Pages](https
 
 ## Features
 
+ORIG (niklasbuschmann):
+
  - supports dark mode on macOS Mojave
  - optional sidebar
  - MathJax support
@@ -20,6 +22,13 @@ Just fork the repo and adjust the `_config.yml` to use with [Github Pages](https
  - responsive
  - syntax highlighting
  - supports comments via [disqus](https://disqus.com/) or [isso](http://posativ.org/isso/)
+
+MOD (bahnfrei):
+ - custom theme (style: custom in _config.yml, includes assets/css/custom.sass
+ - custom archive and category page
+ - simple search function using lunr
+ - simple gallery with lightbox support
+ - local video embedd functionality
 
 ## Based on
 
@@ -35,7 +44,7 @@ Just fork the repo and adjust the `_config.yml` to use with [Github Pages](https
 You can use this theme with the `jekyll-remote-theme` plugin. Just create an empty repo, copy over the `index.html` file and add this to your `_config.yml`:
 
 ```yaml
-remote_theme: niklasbuschmann/contrast@v2.6
+remote_theme: bahnfrei/contrast
 
 plugins:
   - jekyll-remote-theme
@@ -47,7 +56,13 @@ plugins:
 
 ## Screenshots
 
-![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
+![Screenshot](/assets/images/home.png)
 
-![screenshot](https://user-images.githubusercontent.com/4943215/73125195-5fa42200-3fa4-11ea-89f8-d09c1d6fe252.png)
+![Screenshot](/assets/images/photo.png)
+
+![Screenshot](/assets/images/categories.png)
+
+![Screenshot](/assets/images/archive.png)
+
+![Screenshot](/assets/images/search.png)
 

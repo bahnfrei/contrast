@@ -1,0 +1,23 @@
+---
+title: "Archive"
+layout: default
+---
+{%- for post in site.posts %}
+  {%- if post.next %}
+    {%- assign year = post.date | date: '%Y' -%}
+    {%- assign prev_year = post.next.date | date: '%Y' -%}
+    {% if year != prev_year %}
+  </article>
+  <article class="archive">
+    <header><h1>{{ post.date | date: '%Y' }}</h1></header>
+    {%- endif %}
+  {%- else %}
+  <article class="archive">
+    <header><h1>{{ post.date | date: '%Y' }}</h1></header>
+  {%- endif %}
+    <div>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y, %B %-d" }}</time>
+      <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+    </div>
+{%- endfor %}
+  </article>
