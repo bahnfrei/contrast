@@ -1,0 +1,211 @@
+---
+---
+
+// -------------------------------------------------------------------
+// CUSTOM COLORS
+// -------------------------------------------------------------------
+
+$link-color: #09c
+
+// -------------------------------------------------------------------
+// DEFAULT THEME
+// -------------------------------------------------------------------
+
+@import index, anchor
+
+body > header, article, body > footer
+  padding: 1.5em calc(34% - 12rem)
+
+@media (max-width: 40em)
+  body > header, article, body > footer
+    padding: 1.5em 1em
+
+body > header
+  box-shadow: 0 0 1em rgba(40, 40, 40, .03)
+
+article, body > footer
+  border-top: 1px solid reduce(12)
+
+article
+  background: reduce(1)
+
+body > footer
+  background: reduce(5)
+  color: reduce(100)
+
+// -------------------------------------------------------------------
+// SITE BRANDING
+// -------------------------------------------------------------------
+
+// header (logo, site name, color) -----------------------------------
+
+header.dark
+  background: $link-color
+
+.brand
+  width: 100%
+
+.brand img
+  height: 3em
+  width: 3em
+  margin-top: 0.65em
+  margin-right: 1.5em
+  padding: 0 0
+  float: left
+
+.brand h1
+  margin: 0 0
+  padding: 0 0
+  font-size: 2.5em
+
+// navigation bar (link color) ---------------------------------------
+
+nav a
+  color: #fff
+  &.selected, &:hover
+    color: #000000
+
+// round things up ---------------------------------------------------
+
+a.ghost, a.gray, a.disabled, code, pre, button, input, img
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+
+table
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+
+table tr:first-child th:first-child
+  -moz-border-radius: 5px 0 0 0
+  -webkit-border-radius: 5px 0 0 0
+  border-radius: 5px 0 0 0
+
+table tr:first-child th:last-child
+  -moz-border-radius: 0 5px 0 0
+  -webkit-border-radius: 0 5px 0 0
+  border-radius: 0 5px 0 0
+
+table tr:last-child td:first-child
+  -moz-border-radius: 0 0 0 5px
+  -webkit-border-radius: 0 0 0 5px
+  border-radius: 0 0 0 5px
+
+table tr:last-child td:last-child
+  -moz-border-radius: 0 0 5px 0
+  -webkit-border-radius: 0 0 5px 0
+  border-radius: 0 0 5px 0
+
+// article header ----------------------------------------------------
+
+article header categories
+  color: #949494
+
+article a, header categories a
+  color: $link-color
+  font-weight: 300
+
+article header div, article header h1
+  width: 100%
+  text-align: center
+
+// quotes (color) ----------------------------------------------------
+blockquote
+  border-left: 5px solid $link-color
+
+// mascot ------------------------------------------------------------
+
+.mascot li
+  list-style-type: none
+  text-align: center
+
+// -------------------------------------------------------------------
+// ADDIONAL FEATURES
+// -------------------------------------------------------------------
+
+// center images -----------------------------------------------------
+
+.center-image
+  margin: 0 auto
+  display: block
+
+.center-image-w75
+  margin: 0 auto
+  display: block
+  width: 75%
+
+.center-image-w50
+  margin: 0 auto
+  display: block
+  width: 50%
+
+// photo gallery -----------------------------------------------------
+
+.photo-gallery, .photo-gallery li
+  list-style: none
+  padding: 0
+  margin: 0
+  text-align: center
+
+.photo-gallery li
+  display: inline-block
+  width: 32.5%
+
+.photo-gallery li img
+  width: 100%
+  height: 12vw
+  border-radius: 5px
+  -o-object-fit: cover
+  object-fit: cover
+
+// embed videos ------------------------------------------------------
+
+.video-container
+  position: relative
+  padding-bottom: 56.25%
+  height: 0
+  overflow: hidden
+  border-radius: 5px
+
+.video-container iframe, .video-container object, .video-container embed, .video-container video
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+// search ------------------------------------------------------------
+
+.search li
+  list-style-type: none
+
+.search input[type="text"]
+  width: 50%
+  font-size: calc(.6vw + .5em)
+  font-weight: 300
+  line-height: 1.2
+  padding: 10px 20px
+  border-radius: 5px
+  box-shadow: 0 0 0 2px $link-color inset
+  border: 0
+
+.search input[type="submit"]
+  background: $link-color
+  box-shadow: 0 0 0 2px $link-color inset
+  border: 0
+  font-size: calc(.6vw + .5em)
+  font-weight: 300
+  line-height: 1.2
+  padding: 10px 20px
+  margin-left: 10px
+  color: #fff
+  &.selected, &:hover
+    cursor: pointer
+    background: #FFF
+    color: $link-color
+
+// lightbox fix ------------------------------------------------------
+
+//.lightbox, .lightboxOverlay
+//  padding: 0px
