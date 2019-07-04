@@ -13,7 +13,7 @@ style: custom                # use a custom style
 
 permalink: pretty            # see https://jekyllrb.com/docs/permalinks/
 date_format: "%B %-d, %Y"    # see http://shopify.github.io/liquid/filters/date/
-paginate: 5                  # number of articles per page
+paginate: 5                  # number of articles per page, use "layout: paginate" in the index.html to enable pagination
 show_excerpts: true          # preview articles on the home page
 
 navigation:                  # site navigation in the header
@@ -24,7 +24,7 @@ navigation:                  # site navigation in the header
 
 icons:                       # (optional) icons in the header, see http://fontawesome.com/icons
   search:   "/pages/search"
-  envelope: "mailto:bahnfrei@users.noreply.github.com"
+  envelope: "mailto:10193241+bahnfrei@users.noreply.github.com"
   github:   "https://github.com/bahnfrei/contrast"
   rss:      "/feed.xml"
 
