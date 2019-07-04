@@ -1,6 +1,7 @@
 ---
 title:  Photo Gallery
 categories: photos
+excerpt_separator: <!--more-->
 ---
 
 some cakes...
@@ -17,7 +18,7 @@ some cakes...
   {%- endfor %}
 </ul>
 
-
+<!--more-->
 
 some lakes...
 
