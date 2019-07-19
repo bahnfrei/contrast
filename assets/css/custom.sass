@@ -11,7 +11,7 @@ $link-color: #09c
 // DEFAULT THEME
 // -------------------------------------------------------------------
 
-@import index, anchor
+@import index
 
 body > header, article, body > footer
   padding: 1.5em calc(34% - 12rem)
@@ -20,27 +20,50 @@ body > header, article, body > footer
   body > header, article, body > footer
     padding: 1.5em 1em
 
-body > header
-  box-shadow: 0 0 1em rgba(40, 40, 40, .03)
-
 article, body > footer
   border-top: 1px solid reduce(12)
+
+{% if site.dark_header %}
+
+body > header
+  background: $link-color
+  color: #fff
+
+{% else %}
+
+body > header
+  box-shadow: 0 0 1em rgba(40, 40, 40, .05)
 
 article
   background: reduce(1)
 
+{% endif %}
+
+{% if site.show_footer %}
+
+@import anchor
+
+{% if site.dark_footer %}
+
+body > footer
+  background: $link-color
+  color: #fff
+
+{% else %}
+
 body > footer
   background: reduce(5)
   color: reduce(100)
+
+{% endif %}
+
+{% endif %}
 
 // -------------------------------------------------------------------
 // SITE BRANDING
 // -------------------------------------------------------------------
 
 // header (logo, site name, color) -----------------------------------
-
-header.dark
-  background: $link-color
 
 .brand
   width: 100%
@@ -114,7 +137,19 @@ article header div, article header h1
 blockquote
   border-left: 5px solid $link-color
 
-// mascot ------------------------------------------------------------
+// archive/category pages --------------------------------------------
+.archive div
+  display: flex
+  flex-wrap: wrap
+  align-items: baseline
+
+.archive time
+  min-width: 10em
+
+.archive h3
+  margin: 0
+
+// mascot page -------------------------------------------------------
 
 .mascot li
   list-style-type: none
