@@ -1,0 +1,15 @@
+<div class="photo-gallery">
+  <ul>
+{%- for image in site.static_files %}
+  {%- if image.path contains include.gallery_path %}
+    {%- unless image.path contains '.md' %}
+    <li>
+      <a href="{{ image.path | relative_url | remove: "thumb_" }}" data-lightbox="{{ include.lb_id }}" title="{{ include.lb_title }}">
+        <img src="{{ image.path | relative_url }}" alt="{{ image.basename }}" />
+      </a>
+    </li>
+    {%- endunless %}
+  {%- endif %}
+{%- endfor %}
+  </ul>
+</div>
