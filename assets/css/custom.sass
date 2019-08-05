@@ -19,28 +19,24 @@ $sm-break: 450px
 @import index
 
 body > header, article, body > footer
-  padding: 1.5em calc(34% - 12rem)
+  padding: 1.5em
 
-@media (max-width: 40em)
+@media (min-width: 40em)
   body > header, article, body > footer
-    padding: 1.5em 1em
-
-article, body > footer
-  border-top: 1px solid reduce(12)
+    padding: 1.5em calc(34% - 12rem)
 
 {% if site.dark_header %}
 
 body > header
   background: $link-color
   color: #fff
+  border-bottom: 1px solid rgba(255, 255, 255, .05)
 
 {% else %}
 
 body > header
-  box-shadow: 0 0 1em rgba(40, 40, 40, .05)
-
-article
-  background: reduce(1)
+  box-shadow: 0 0 .6em rgba(40, 40, 40, .05)
+  border-bottom: 1px solid reduce(12)
 
 {% endif %}
 
@@ -53,12 +49,14 @@ article
 body > footer
   background: $link-color
   color: #fff
+  border-bottom: 1px solid rgba(255, 255, 255, .05)
 
 {% else %}
 
 body > footer
   background: reduce(5)
   color: reduce(100)
+  border-top: 1px solid reduce(12)
 
 {% endif %}
 
@@ -125,7 +123,10 @@ table tr:last-child td:last-child
   -webkit-border-radius: 0 0 5px 0
   border-radius: 0 0 5px 0
 
-// article header ----------------------------------------------------
+// article -----------------------------------------------------------
+
+article
+  border-top: 1px solid reduce(12)
 
 article header categories
   color: #949494
