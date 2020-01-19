@@ -8,15 +8,15 @@ layout: default
     <div>
     <h1>{{ page.title }}</h1>
     <time datetime="{{ page.date | date_to_xmlschema }}">posted on {{ page.date | date: date_format }}{% if page.author %} by {{ page.author }}{% else if site.author %} by {{ site.author }}{% endif %}</time>
+    {%- if page.categories.size > 0 -%}
     <categories>
-    {%- if page.categories -%}
     |&nbsp;categories:&nbsp;
     {%- for category in page.categories -%}
     <a href="{{site.baseurl}}/pages/categories/#{{category|slugize}}">{{category}}</a>
     {%- unless forloop.last -%}&nbsp;{%- endunless -%}
     {%- endfor -%}
-    {%- endif -%}
     </categories>
+    {%- endif -%}
     </div>
 </header>
   {{ page.excerpt }}

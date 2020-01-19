@@ -97,10 +97,18 @@ nav a, nav.icons svg
     color: $dark
     text-decoration: none
 
-// navigation "read morei >>" (link color) ---------------------------
+// navigation "read more >>" (link color) ---------------------------
+
+a.ghost
+  background-color: $link-color
+  color: $light
+  transition: 0.3s
 
 a.ghost:hover
-  color: $light
+  border: 1px solid $link-color
+  background-color: $light
+  color: $link-color
+  transition: 0.3s
 
 // round things up ---------------------------------------------------
 
@@ -144,7 +152,7 @@ article header categories
 
 article a, header categories a
   color: $link-color
-  font-weight: 300
+  font-weight: $font-weight
 
 article header div, article header h1
   width: 100%
@@ -161,12 +169,11 @@ blockquote
   flex-wrap: wrap
   align-items: baseline
 
-.archive time
-  min-width: 10em
+.archive *
   margin: 0
 
-.archive h3
-  margin: 0
+.archive time
+  min-width: 9.5em
 
 // mascot page -------------------------------------------------------
 
@@ -259,28 +266,30 @@ blockquote
 
 .search input[type="text"]
   width: 50%
-  font-size: calc(.6vw + .5em)
-  font-weight: 300
+  font-size: $font-size
+  font-weight: $font-weight
   line-height: 1.2
   padding: 10px 20px
   border-radius: 5px
-  box-shadow: 0 0 0 2px $link-color inset
+  box-shadow: 0 0 0 1px $link-color inset
   border: 0
 
 .search input[type="submit"]
   background: $link-color
-  box-shadow: 0 0 0 2px $link-color inset
+  box-shadow: 0 0 0 1px $link-color inset
   border: 0
-  font-size: calc(.6vw + .5em)
-  font-weight: 300
+  font-size: $font-size
+  font-weight: $font-weight
   line-height: 1.2
   padding: 10px 20px
   margin-left: 10px
   color: $light
+  transition: 0.3s
   &.selected, &:hover
     cursor: pointer
     background: $light
     color: $link-color
+    transition: 0.3s
 
 // nanobar -----------------------------------------------------------
 .bar
