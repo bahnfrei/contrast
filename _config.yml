@@ -35,5 +35,6 @@ plugins:
  - jekyll-feed
  - jekyll-default-layout
  - jekyll-paginate
+ - jekyll-gist
 
 include: ['pages']
