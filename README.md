@@ -56,7 +56,13 @@ plugins:
 
 ## Screenshots
 
-![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
+![Screenshot](/assets/images/home.png)
 
-![screenshot](https://user-images.githubusercontent.com/4943215/73125195-5fa42200-3fa4-11ea-89f8-d09c1d6fe252.png)
+![Screenshot](/assets/images/photo.png)
+
+![Screenshot](/assets/images/categories.png)
+
+![Screenshot](/assets/images/archive.png)
+
+![Screenshot](/assets/images/search.png)
 
