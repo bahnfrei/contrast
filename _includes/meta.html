@@ -1,8 +1,14 @@
 <header>
-  {% if include.post.categories.size > 0 and site.minimal != true and include.preview != true %}
-    <div class="categories">{{ include.post.categories | join: ", "  | upcase }}</div>
-  {% endif %}
-  <h1><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h1>
   {%- assign date_format = site.date_format | default: "%B %d, %Y" -%}
-  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: date_format }}</time>
+  <h1>{{ include.post.title }}</h1>
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">posted on {{ include.post.date | date: date_format }}{% if include.post.author %} by {{ include.post.author }}{% else if site.author %} by {{ site.author }}{% endif %}</time>
+  {%- if include.post.categories.size > 0 -%}
+  <categories>
+  |&nbsp;categories:&nbsp;
+  {%- for category in include.post.categories -%}
+  <a href="{{site.baseurl}}/pages/categories/#{{category|slugize}}">{{category}}</a>
+  {%- unless forloop.last -%}&nbsp;{%- endunless -%}
+  {%- endfor -%}
+  </categories>
+  {%- endif -%}
 </header>

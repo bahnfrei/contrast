@@ -1,33 +1,36 @@
 title: "Blog Title"
 author: "Blog Author"
-description: "Made with <b style=\"color: #f45;\">&lt;3</b> by <b><a href=\"https://github.com/niklasbuschmann\">@niklasbuschmann</a></b>"
-permalink: /:title/
+description: "Really cool blog about ... something"
+logo: "/assets/images/logo.png"
+permalink: pretty
 lang: "en"
 excerpt_separator: "\n\n\n"
-date_format: "%B %d, %Y"
+date_format: "%B %-d, %Y"
 
 # Layout
 
 sidebar: true                # show a sidebar instead of the usual header
-show_excerpts: false         # show article excerpts on the home page
+show_excerpts: true          # show article excerpts on the home page
 show_related: true           # show the previous and next links after every post
-show_description: true       # show the site description in the sidebar
-show_title: false            # always keep the site title visible
+show_description: false      # show the site description in the sidebar
+show_title: true             # always keep the site title visible
 
 # Styling
 
-dark_header: false           # always keep the header dark
+dark_header: true            # always keep the header dark
 minimal: false               # use simpler style
 
 # Menu
 
 navigation:
   - {file: "index.html", icon: home}
-  - {file: "README.md", icon: address-card}
+  - {file: "categories.html", icon: th-list}
+  - {file: "archive.html", icon: list}
 
 external:                    # see http://fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:niklasbuschmann@users.noreply.github.com"}
-  - {title: Github, icon: github, url: "https://github.com/niklasbuschmann/contrast"}
+  - {title: Search, icon: search, file: "search.html"}
+  - {title: Mail, icon: envelope, url: "mailto:mailto:10193241+bahnfrei@users.noreply.github.com"}
+  - {title: Github, icon: github, url: "https://github.com/bahnfrei/contrast"}
   - {title: Subscribe, icon: rss, url: "/feed.xml"}
 
 comments:
@@ -36,4 +39,6 @@ comments:
 
 plugins:
  - jekyll-feed
+
 include: ['pages']
+

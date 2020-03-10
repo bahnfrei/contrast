@@ -1,5 +1,6 @@
 ---
 title:  Photo Gallery
+layout: post
 categories: photos
 excerpt_separator: <!--more-->
 ---
