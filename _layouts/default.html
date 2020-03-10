@@ -22,10 +22,13 @@
 {% endif %}
 {% if site.comments.disqus_shortname and page.layout == "post" %}<script src="//{{ site.comments.disqus_shortname }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>{% endif %}
+<link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/lightbox/css/lightbox.css" | relative_url }}">
+<script defer src="{{ "/assets/lightbox/js/lightbox-plus-jquery.min.js" | relative_url }}"></script>
 
 <header class="icons">
   {% unless site.show_title != true and site.navigation and site.external %}
-    <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
+    <div class="brand"><img src="{{ site.logo | prepend: site.baseurl | replace: '//', '/' }}" alt="{{ site.title | escape }} Logo"><h1>{{ site.title | escape }}</h1></div>
   {% endunless %}
   {% if site.navigation or site.external %}
     {% include menu.html menu=site.navigation icons=false %}
@@ -40,16 +43,5 @@
 </header>
 
 {{ content }}
-
-<script>
-var options = {
-  classname: 'my-class',
-  id: 'my-id',
-};
-var nanobar = new Nanobar( options );
-nanobar.go(30);
-nanobar.go(75);
-nanobar.go(100);
-</script>
 
 </html>

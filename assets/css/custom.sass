@@ -1,162 +1,89 @@
 ---
 ---
 
-// -------------------------------------------------------------------
-// CUSTOM COLORS
-// -------------------------------------------------------------------
-
-// brand color
-$link-color: #09c
+@import index
 
 // Mobile display
 $break: 768px
 $sm-break: 450px
 
 // -------------------------------------------------------------------
-// DEFAULT THEME
-// -------------------------------------------------------------------
-
-@import index
-
-body > header, body > article, body > footer
-  padding: 1.5em
-
-@media (min-width: 32em)
-  body > header, body > article, body > footer
-    padding: 1.5em calc(38% - 12em)
-
-@media (min-width: 100em)
-  body > header, body > article, body > footer
-    padding: 1.5em calc(46% - 20em)
-
-{% if site.dark_header %}
-
-body > header
-  background: $link-color
-  color: #fff
-  border-bottom: 1px solid rgba($light, 0.05)
-
-{% else %}
-
-body > header
-  box-shadow: 0 0 .6em rgba($dark, 0.06)
-  border-bottom: 1px solid reduce(16)
-
-{% endif %}
-
-{% if site.show_footer %}
-
-@import anchor, footer
-
-{% if site.dark_footer %}
-
-body > footer
-  background: $link-color
-  color: #fff
-  border-top: 1px solid rgba($light, 0.05)
-
-{% else %}
-
-body > footer
-  background: rgba($light, 0.01)
-  box-shadow: 0 0 .6em rgba($dark, 0.05) inset
-  border-top: 1px solid reduce(12)
-  color: reduce(100)
-
-{% endif %}
-
-{% endif %}
-
-// -------------------------------------------------------------------
 // SITE BRANDING
 // -------------------------------------------------------------------
 
-// header (logo, site name, color) -----------------------------------
+// header (logo, site name) ------------------------------------------
 
 .brand
   width: 100%
+  display: flex
+  flex-wrap: wrap
 
 .brand img
-  height: 3em
-  width: 3em
-  margin-top: 0.65em
-  margin-right: 1.5em
-  padding: 0 0
-  float: left
+  height: 3.5em
+  width: 3.5em
+  margin: 0 1.5em 1.5em 0
+  padding: 0
 
 .brand h1
-  margin: 0 0
-  padding: 0 0
-  font-size: 2.5em
+  margin: 0 0 0.5em 0
+  padding: 0
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
 
 // navigation bar (link color) ---------------------------------------
 
-nav a, nav.icons svg
+nav a
   color: $light
   &.selected, &:hover
     color: $dark
-    text-decoration: none
 
-// navigation "read more >>" (link color) ---------------------------
-
-a.ghost
-  background-color: $link-color
+// more button -------------------------------------------------------
+.more a
   color: $light
-  transition: 0.3s
+  background: $link-color
 
-a.ghost:hover
-  border: 1px solid $link-color
-  background-color: $light
+.more a:hover
   color: $link-color
-  transition: 0.3s
+  background: $light
+  border: 1.5px solid $link-color
 
 // round things up ---------------------------------------------------
 
-a.ghost, a.gray, a.disabled, code, pre, button, input, img
-  -moz-border-radius: 5px
+.more a, .more a:hover, code, pre, button, input, img
   -webkit-border-radius: 5px
   border-radius: 5px
 
 table
-  -moz-border-radius: 5px
   -webkit-border-radius: 5px
   border-radius: 5px
 
 table tr:first-child th:first-child
-  -moz-border-radius: 5px 0 0 0
   -webkit-border-radius: 5px 0 0 0
   border-radius: 5px 0 0 0
 
 table tr:first-child th:last-child
-  -moz-border-radius: 0 5px 0 0
   -webkit-border-radius: 0 5px 0 0
   border-radius: 0 5px 0 0
 
 table tr:last-child td:first-child
-  -moz-border-radius: 0 0 0 5px
   -webkit-border-radius: 0 0 0 5px
   border-radius: 0 0 0 5px
 
 table tr:last-child td:last-child
-  -moz-border-radius: 0 0 5px 0
   -webkit-border-radius: 0 0 5px 0
   border-radius: 0 0 5px 0
 
 // article -----------------------------------------------------------
 
-article
-  border-top: 1px solid reduce(12)
+article header
+  text-align: center
 
 article header categories
   color: reduce(100)
 
-article a, header categories a
+article header categories a
   color: $link-color
-  font-weight: $font-weight
-
-article header div, article header h1
-  width: 100%
-  text-align: center
 
 // quotes (color) ----------------------------------------------------
 
@@ -164,21 +91,22 @@ blockquote
   border-left: 5px solid $link-color
 
 // archive/category pages --------------------------------------------
+
+.archive
+  font-size: inherit
+
 .archive div
   display: flex
   flex-wrap: wrap
   align-items: baseline
 
-.archive *
+.archive time
+  min-width: 10em
   margin: 0
 
-.archive time
-  min-width: 9.5em
-
-// mascot page -------------------------------------------------------
-
-.mascot h1
-  text-align: center
+.archive h3
+  margin: 0
+  font-weight: normal
 
 // -------------------------------------------------------------------
 // ADDIONAL FEATURES
@@ -202,7 +130,7 @@ blockquote
 
 // photo gallery -----------------------------------------------------
 
-*
+.photo-gallery
   box-sizing: border-box
 
 .photo-gallery ul
@@ -223,7 +151,6 @@ blockquote
   margin: 0
 
 .photo-gallery li img
-  border-radius: 5px
   width: 100%
   height: 100%
   padding: 0
@@ -261,39 +188,30 @@ blockquote
 
 // search ------------------------------------------------------------
 
+article.search
+  border: 0
+
 .search li
   list-style-type: none
 
 .search input[type="text"]
   width: 50%
-  font-size: $font-size
-  font-weight: $font-weight
-  line-height: 1.2
-  padding: 10px 20px
-  border-radius: 5px
+  font-size: 1em
   box-shadow: 0 0 0 1px $link-color inset
   border: 0
+  padding: 10px 20px
 
 .search input[type="submit"]
+  color: $light
   background: $link-color
+  font-size: 1em
   box-shadow: 0 0 0 1px $link-color inset
   border: 0
-  font-size: $font-size
-  font-weight: $font-weight
-  line-height: 1.2
   padding: 10px 20px
   margin-left: 10px
-  color: $light
-  transition: 0.3s
+  transition: .2s
   &.selected, &:hover
     cursor: pointer
     background: $light
     color: $link-color
-    transition: 0.3s
-
-// nanobar -----------------------------------------------------------
-.bar
-  background-color: $link-color
-  filter: invert(100%)
-  transition: width 0.01s ease-in-out
 

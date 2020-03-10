@@ -18,7 +18,7 @@ body > header
   display: block
   position: fixed
   overflow: auto
-  background: darken($dark, 2%)
+  background: $link-color
   color: #fff
   border: none
   box-shadow: none
@@ -42,7 +42,7 @@ nav a
   padding: .5em 2.25em
 
 nav a:hover, nav a.selected
-  background: lighten($dark, 2%)
+  background: lighten($link-color, 4%)
   text-decoration: inherit
 
 article:not(:last-child)
